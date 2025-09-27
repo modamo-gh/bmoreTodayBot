@@ -1,4 +1,5 @@
 import { AtpAgent } from "@atproto/api";
+import "dotenv/config";
 import * as fs from "fs";
 import { DateTime } from "luxon";
 import * as path from "path";

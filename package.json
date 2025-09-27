@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@atproto/api": "^0.16.10",
+    "dotenv": "^17.2.2",
     "luxon": "^3.7.2"
   },
   "devDependencies": {
