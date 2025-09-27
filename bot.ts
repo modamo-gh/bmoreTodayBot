@@ -183,6 +183,8 @@ Check out more at ${url}`;
 	const beforeURL = textString.substring(0, characterStart);
 	const linkStart = new TextEncoder().encode(beforeURL).length;
 	const linkEnd = linkStart + urlBytes.length;
+	const tagStart = text.indexOf("#Baltimore");
+	const tagEnd = tagStart + "#Baltimore".length;
 
 	const embed = await getImageEmbed(agent, event);
 
@@ -191,8 +193,14 @@ Check out more at ${url}`;
 		embed,
 		facets: [
 			{
-				index: { byteEnd: linkEnd, byteStart: linkStart },
-				features: [{ $type: "app.bsky.richtext.facet#link", uri: url }]
+				features: [{ $type: "app.bsky.richtext.facet#link", uri: url }],
+				index: { byteEnd: linkEnd, byteStart: linkStart }
+			},
+			{
+				features: [
+					{ $type: "app.bsky.richtext.facet#tag", tag: "Baltimore" }
+				],
+				index: { byteEnd: tagEnd, byteStart: tagStart }
 			}
 		],
 		text
