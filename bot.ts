@@ -168,7 +168,7 @@ const skeetRandomEvent = async () => {
 	};
 
 	const url = "https://bmoretoday.modamo.xyz/";
-	const text = `Today's random event:
+	const text = `Today's random #Baltimore event:
 
 🎟️ : ${event.title}
 📍 : ${event.location}
